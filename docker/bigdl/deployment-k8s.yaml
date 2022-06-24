@@ -16,7 +16,7 @@ spec:
         appType: bigdl
     spec:
       containers:
-        - image: intelanalytics/bigdl:default
+        - image: intelanalytics/bigdl-spark-3.1.2:ctc-client
           ports:
             - name: jupyter-address
               containerPort: 8888
@@ -155,7 +155,7 @@ data:
   mode: client
   name: bigdl-notebook
   spark.kubernetes.authenticate.driver.serviceAccountName: spark
-  spark.kubernetes.container.image: intelanalytics/bigdl-spark-3.1.2:202206222
+  spark.kubernetes.container.image: intelanalytics/bigdl-spark-3.1.2:ctc-executor
   spark.driver.cores: "4"
   spark.driver.memory: 20g
   spark.executor.cores: "4"
@@ -165,4 +165,4 @@ data:
   spark.kubernetes.executor.volumes.persistentVolumeClaim.nfsvolumeclaim.options.claimName: nfsvolumeclaim
   spark.kubernetes.executor.volumes.persistentVolumeClaim.nfsvolumeclaim.mount.path: /data/jupyter
   spark.pyspark.driver.python: python
-  spark.pyspark.python: /usr/local/envs/bigdl/python
+  spark.pyspark.python: /usr/local/envs/bigdl/bin/python
