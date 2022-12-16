@@ -171,7 +171,7 @@ else
 
         if [ "${args[1]}" = "kubernetes-application" ]; then
             CLASS_TO_RUN=org.apache.flink.kubernetes.entrypoint.KubernetesApplicationClusterEntrypoint
-        elif [ "${args[1]}" = "kubernetes-session" ]
+        elif [ "${args[1]}" = "kubernetes-session" ]; then
             CLASS_TO_RUN=org.apache.flink.kubernetes.entrypoint.KubernetesSessionClusterEntrypoint
         fi
 
